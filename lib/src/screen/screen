@@ -1,0 +1,4 @@
+in the folder we represent every screen we have as a folder
+each folder could has 3 file (state,controller,view) and we may also have other file if needed 
+the state could be a single file or multi files
+any other code that is only related to this screen should be put here too 

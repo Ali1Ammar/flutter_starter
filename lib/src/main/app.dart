@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:khana/src/main/route.dart';
+import 'package:khana/src/main/theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
               AppLocalizations.of(context)!.appTitle,
           routerDelegate: appRouter.delegate(),
           routeInformationParser: appRouter.defaultRouteParser(),
-          theme: ThemeData(),
-          darkTheme: ThemeData.dark(),
+          theme: Themeing.lightTheme,
+          darkTheme: Themeing.darkTheme,
         );
       }),
     );

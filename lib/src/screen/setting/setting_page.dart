@@ -8,7 +8,7 @@ class SettingPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final setting = ref.watch(settingControllerProvider);
+    ref.watch(settingControllerProvider);
     final settingController = ref.read(settingControllerProvider.notifier);
     return Scaffold(
       appBar: AppBar(

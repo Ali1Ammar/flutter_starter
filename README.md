@@ -30,7 +30,7 @@ see setting_controller for example
 The `assets` directory houses images, fonts, and any other files you want to
 include with your application.
 
-The `assets/images` directory contains [resolution-aware
+
 we use flutter_gen to generate a static strong type interface for our assets
 ```dart
 Assets.images.flutterLogo.image()
@@ -54,4 +54,25 @@ or we use hive if needed
 we use auto_route as it provide a strong type generator route and help parsing the argument too
 see home_page, main/route.dart for example of using it
 
-## 
+for argument passing we could use the following inside any provider
+
+```dart
+  final args = ref.read(appRouterProvider).current.argsAs<DetialsRouteArgs>();
+```
+see detials_controller for more info
+
+also make sure that this controller used for the first time the current page in the same as the args used , 
+or we could pass DetialsRouteArgs with family provider too
+
+## ScriptRunner
+we use script_runner for mange our script
+
+so insted of writeing
+
+`flutter packages pub run build_runner build  --delete-conflicting-outputs`
+
+we write 
+
+`scr buildd`
+
+see script_runner.yaml and https://pub.dev/packages/script_runner for more info

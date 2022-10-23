@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: Consumer(builder: (context, ref, child) {
-        final setting = ref.watch(settingControllerProvider);
         final appRouter = ref.watch(appRouterProvider);
+        final setting = ref.watch(settingControllerProvider);
 
         return MaterialApp.router(
           restorationScopeId: 'app',

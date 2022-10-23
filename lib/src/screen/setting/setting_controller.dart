@@ -4,8 +4,9 @@ import 'package:hydrated_notifier/hydrated_notifier.dart';
 import 'package:khana/src/screen/setting/setting_state.dart';
 
 final settingControllerProvider =
-    StateNotifierProvider<SettingController, SettingState>(
-        (ref) => SettingController());
+    StateNotifierProvider<SettingController, SettingState>((ref) {
+  return SettingController();
+});
 
 class SettingController extends HydratedStateNotifier<SettingState> {
   SettingController()

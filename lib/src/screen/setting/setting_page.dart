@@ -4,7 +4,8 @@ import 'package:khana/src/screen/setting/setting_controller.dart';
 import 'package:khana/src/shared/extention/extention.dart';
 
 class SettingPage extends ConsumerWidget {
-  const SettingPage({super.key});
+  final String justSomeParam;
+  const SettingPage(this.justSomeParam, {super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

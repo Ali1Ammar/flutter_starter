@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:khana/src/main/route.dart';
 import 'package:khana/src/main/theme.dart';
+import 'package:khana/src/screen/setting/setting_controller.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -14,10 +15,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: Consumer(builder: (context, ref, child) {
+        final setting = ref.watch(settingControllerProvider);
         final appRouter = ref.watch(appRouterProvider);
 
         return MaterialApp.router(
           restorationScopeId: 'app',
+          //route
+          onGenerateTitle: (BuildContext context) =>
+              AppLocalizations.of(context)!.appTitle,
+          routerDelegate: appRouter.delegate(),
+          routeInformationParser: appRouter.defaultRouteParser(),
+          //theme
+          theme: Themeing.lightTheme,
+          themeMode: setting.themeMode,
+          darkTheme: Themeing.darkTheme,
+          //localizations
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -27,12 +39,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: const [
             Locale('en', ''),
           ],
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context)!.appTitle,
-          routerDelegate: appRouter.delegate(),
-          routeInformationParser: appRouter.defaultRouteParser(),
-          theme: Themeing.lightTheme,
-          darkTheme: Themeing.darkTheme,
+          locale: Locale(setting.lang),
         );
       }),
     );

@@ -1,7 +1,7 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:khana/src/screen/setting/setting_controller.dart';
+import 'package:khana/src/shared/extention/extention.dart';
 
 class SettingPage extends ConsumerWidget {
   const SettingPage({super.key});
@@ -9,6 +9,39 @@ class SettingPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final setting = ref.watch(settingControllerProvider);
-    return Container();
+    final settingController = ref.read(settingControllerProvider.notifier);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(context.translator.appTitle),
+      ),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Text(Theme.of(context).brightness.name),
+              Switch(
+                  value: Theme.of(context).brightness == Brightness.dark,
+                  onChanged: (val) {
+                    settingController.toggleMode(val);
+                  }),
+            ],
+          ),
+          PopupMenuButton<Locale>(
+            onSelected: (value) {
+              settingController.setLang(value.languageCode);
+            },
+            itemBuilder: ((context) {
+              return context.supportedLang
+                  .map<PopupMenuItem<Locale>>((e) => PopupMenuItem<Locale>(
+                        value: e,
+                        child: Text(e.languageCode),
+                      ))
+                  .toList();
+            }),
+            child: Text(Localizations.localeOf(context).languageCode),
+          ),
+        ],
+      ),
+    );
   }
 }

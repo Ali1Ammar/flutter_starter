@@ -2,5 +2,10 @@
   "appTitle": "khana",
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "theme": "theme",
+  "@theme": {
+    "description": "theme of the application"
+  },
+  "setting":"setting"
 }

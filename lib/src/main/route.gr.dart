@@ -17,31 +17,53 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    HomePageRoute.name: (routeData) {
+    HomeRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
         child: const HomePage(),
       );
-    }
+    },
+    SettingRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const SettingPage(),
+      );
+    },
   };
 
   @override
   List<RouteConfig> get routes => [
         RouteConfig(
-          HomePageRoute.name,
+          HomeRoute.name,
           path: '/',
-        )
+        ),
+        RouteConfig(
+          SettingRoute.name,
+          path: '/setting',
+        ),
       ];
 }
 
 /// generated route for
 /// [HomePage]
-class HomePageRoute extends PageRouteInfo<void> {
-  const HomePageRoute()
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute()
       : super(
-          HomePageRoute.name,
+          HomeRoute.name,
           path: '/',
         );
 
-  static const String name = 'HomePageRoute';
+  static const String name = 'HomeRoute';
+}
+
+/// generated route for
+/// [SettingPage]
+class SettingRoute extends PageRouteInfo<void> {
+  const SettingRoute()
+      : super(
+          SettingRoute.name,
+          path: '/setting',
+        );
+
+  static const String name = 'SettingRoute';
 }

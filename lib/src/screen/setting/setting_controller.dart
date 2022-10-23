@@ -10,6 +10,17 @@ final settingControllerProvider =
 class SettingController extends HydratedStateNotifier<SettingState> {
   SettingController()
       : super(const SettingState(lang: "en", themeMode: ThemeMode.system));
+  void toggleMode(bool isDark) {
+    if (isDark) {
+      state = state.copyWith(themeMode: ThemeMode.dark);
+    } else {
+      state = state.copyWith(themeMode: ThemeMode.light);
+    }
+  }
+
+  void setLang(String lang) {
+    state = state.copyWith(lang: lang);
+  }
 
   @override
   SettingState? fromJson(Map<String, dynamic> json) =>

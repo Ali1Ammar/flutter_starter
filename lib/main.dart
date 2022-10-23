@@ -2,16 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hydrated_notifier/hydrated_notifier.dart';
+import 'package:khana/src/config/async_config.dart';
 
 import 'src/main/app.dart';
-import 'package:path_provider/path_provider.dart';
 
 void main() async {
   await Hive.initFlutter();
-  var appDir = await getApplicationDocumentsDirectory();
-
+  final asyncConfig = await AsyncConfig.init();
   HydratedStateNotifier.storage = await HydratedStorage.build(
-    storageDirectory: kIsWeb ? HydratedStorage.webStorageDirectory : appDir,
+    storageDirectory:
+        kIsWeb ? HydratedStorage.webStorageDirectory : asyncConfig.appDir,
   );
-  runApp(const MyApp());
+  runApp(MyApp(
+    asyncConfig: asyncConfig,
+  ));
 }

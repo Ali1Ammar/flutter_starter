@@ -1,4 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:khana/src/model/user.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';

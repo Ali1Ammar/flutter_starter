@@ -7,7 +7,6 @@ import 'package:khana/src/api/auth.dart';
 import 'package:khana/src/api/user.dart';
 import 'package:khana/src/config/async_config.dart';
 import 'package:khana/src/config/constant.dart';
-import 'package:khana/src/model/user.dart';
 
 import '../shared/helper/log.dart';
 
@@ -30,7 +29,7 @@ final dioClient = Provider((ref) {
   return dio;
 });
 
-final apiClient = Provider((ref) => ApiClient(ref.watch(dioClient)));
+final apiClient = Provider((ref) => ApiClient(ref.read(dioClient)));
 
 class ApiClient {
   late final UserClient user;

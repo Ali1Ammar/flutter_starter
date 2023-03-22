@@ -15,10 +15,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  intl: ^0.17.0
+  intl: ^0.18.0
 
-  dio: ^4.0.6
-  cached_network_image: ^3.2.2
+  dio: ^5.0.3
+  cached_network_image: ^3.2.3
 
   auto_route: ^5.0.2
 
@@ -26,24 +26,24 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_secure_storage: ^8.0.0
 
-  flutter_hooks: ^0.18.5+1
-  hooks_riverpod: ^2.0.2
+  flutter_hooks: ^0.18.6
+  hooks_riverpod: ^2.3.2
 
   freezed_annotation: ^2.2.0
-  json_annotation: ^4.7.0
+  json_annotation: ^4.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
-  build_runner: ^2.3.2
-  freezed: ^2.2.0
-  json_serializable: ^6.5.3
+  build_runner: ^2.3.3
+  freezed: ^2.3.2
+  json_serializable: ^6.6.1
   auto_route_generator: ^5.0.3
-  flutter_gen_runner: ^5.0.3
-  flutter_native_splash: ^2.2.11
-  flutter_launcher_icons: ^0.10.0
+  flutter_gen_runner: ^5.2.0
+  flutter_native_splash: ^2.2.19
+  flutter_launcher_icons: ^0.12.0
 
 flutter:
   uses-material-design: true

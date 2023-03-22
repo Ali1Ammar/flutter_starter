@@ -1,15 +1,14 @@
 env:
-     DEPLOY_VERSION: 2.6.6+303
-     SYMBOL_PATH: ./debug-info/appbundle
-     ERROR_FILE: ./stacktrack/error.txt
-     
-scripts:  
+  DEPLOY_VERSION: 2.6.6+303
+  SYMBOL_PATH: ./debug-info/appbundle
+  ERROR_FILE: ./stacktrack/error.txt
 
-   - build : flutter packages pub run build_runner build
-   - buildd : flutter packages pub run build_runner build  --delete-conflicting-outputs
+scripts:
+  - build: flutter packages pub run build_runner build
+  - buildd: flutter packages pub run build_runner build  --delete-conflicting-outputs
 
-   - assest: fluttergen
+  - assest: fluttergen
 
-   - error : flutter symbolize -d $SYMBOL_PATH/$DEPLOY_VERSION/app.android-arm.symbols -i $ERROR_FILE
-   - error64 : flutter symbolize -d $SYMBOL_PATH/$DEPLOY_VERSION/app.android-arm64.symbols -i $ERROR_FILE
-   - errorx64 : flutter symbolize -d $SYMBOL_PATH/$DEPLOY_VERSION/app.android-x64.symbols -i $ERROR_FILE
+  - error: flutter symbolize -d $SYMBOL_PATH/$DEPLOY_VERSION/app.android-arm.symbols -i $ERROR_FILE
+  - error64: flutter symbolize -d $SYMBOL_PATH/$DEPLOY_VERSION/app.android-arm64.symbols -i $ERROR_FILE
+  - errorx64: flutter symbolize -d $SYMBOL_PATH/$DEPLOY_VERSION/app.android-x64.symbols -i $ERROR_FILE

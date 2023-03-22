@@ -1,5 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:khana/src/main/route.dart';
+import 'package:starter/src/main/route.dart';
 
 final detialsProvider = StateNotifierProvider<DetialsNotifier, int>((ref) {
   final args = ref.read(appRouterProvider).current.argsAs<DetialsRouteArgs>();

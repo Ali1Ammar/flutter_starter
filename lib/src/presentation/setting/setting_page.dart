@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:khana/src/screen/setting/setting_controller.dart';
-import 'package:khana/src/shared/extention/extention.dart';
+import 'package:starter/src/presentation/setting/setting_controller.dart';
+import 'package:starter/src/shared/extention/extention.dart';
 
 class SettingPage extends ConsumerWidget {
   final String justSomeParam;

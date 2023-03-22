@@ -1,13 +1,15 @@
-import 'package:khana/src/model/user.dart';
-import 'package:retrofit/retrofit.dart';
+import 'package:starter/src/dto/login_response.dart';
 import 'package:dio/dio.dart';
 
-part "auth.g.dart";
+class AuthClient {
+  final Dio dio;
 
-@RestApi()
-abstract class AuthClient {
-  factory AuthClient(Dio dio) = _AuthClient;
+  AuthClient(this.dio);
+  Future<LoginResponse> login(
+      {required String phone, required String password}) async {
+    final res = await dio
+        .post<Map>("/login", data: {"phone": phone, "password": password});
 
-  @GET("/tasks")
-  Future<List<User>> getTasks();
+    return LoginResponse.fromJson(res.data!.cast());
+  }
 }

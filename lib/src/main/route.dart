@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:khana/src/screen/detials/detials_page.dart';
-import 'package:khana/src/screen/home/home_page.dart';
-import 'package:khana/src/screen/setting/setting_page.dart';
+import 'package:starter/src/presentation/detials/detials_page.dart';
+import 'package:starter/src/presentation/home/home_page.dart';
+import 'package:starter/src/presentation/setting/setting_page.dart';
 
 part 'route.gr.dart';
 

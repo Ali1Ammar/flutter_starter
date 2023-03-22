@@ -1,13 +1,13 @@
-import 'package:khana/src/model/user.dart';
-import 'package:retrofit/retrofit.dart';
+import 'package:starter/src/model/user.dart';
 import 'package:dio/dio.dart';
+import 'package:starter/src/shared/helper/json.dart';
 
-part "user.g.dart";
+class UserClient {
+  final Dio dio;
+  UserClient(this.dio);
 
-@RestApi(baseUrl: "user")
-abstract class UserClient {
-  factory UserClient(Dio dio) = _UserClient;
-
-  @GET("/tasks")
-  Future<List<User>> getTasks();
+  Future<List<User>> getFriends() async {
+    final res = await dio.get("/freind");
+    return jsonListConvert(User.fromJson, res.data);
+  }
 }

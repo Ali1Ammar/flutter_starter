@@ -1,4 +1,4 @@
-package com.example.khana
+package com.example.starter
 
 import io.flutter.embedding.android.FlutterActivity
 

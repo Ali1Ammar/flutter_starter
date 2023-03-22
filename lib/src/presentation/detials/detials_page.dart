@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:khana/src/screen/detials/detials_controller.dart';
+import 'package:starter/src/presentation/detials/detials_controller.dart';
 
 class DetialsPage extends ConsumerWidget {
   final int id;

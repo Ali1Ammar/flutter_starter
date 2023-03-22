@@ -1,5 +1,5 @@
 {
-  "appTitle": "khana",
+  "appTitle": "starter",
   "@appTitle": {
     "description": "The title of the application"
   },
@@ -7,5 +7,5 @@
   "@theme": {
     "description": "theme of the application"
   },
-  "setting":"setting"
+  "setting": "setting"
 }

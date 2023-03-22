@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "khana" "\0"
+            VALUE "FileDescription", "starter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "khana" "\0"
+            VALUE "InternalName", "starter" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "khana.exe" "\0"
-            VALUE "ProductName", "khana" "\0"
+            VALUE "OriginalFilename", "starter.exe" "\0"
+            VALUE "ProductName", "starter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

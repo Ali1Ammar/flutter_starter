@@ -9,7 +9,7 @@ all the code is writted inside /lib/src
 we have /localization for a 'arb' file
 and /gen for a assest and font auto generate files
 
-#### inside main we have
+#### inside src we have
 
 - main : any things that belongs to the complete app like route , material app and other
 - shared: shared across the app

@@ -9,12 +9,17 @@ part 'route.gr.dart';
 
 final appRouterProvider = Provider((ref) => AppRouter());
 
-@MaterialAutoRouter(
+@AutoRouterConfig(
   replaceInRouteName: 'Page,Route',
-  routes: <AutoRoute>[
-    AutoRoute(path: "/", page: HomePage, initial: true),
-    AutoRoute(path: "/setting", page: SettingPage),
-    AutoRoute(path: "/detials/:id", page: DetialsPage),
-  ],
 )
-class AppRouter extends _$AppRouter {}
+class AppRouter extends _$AppRouter {
+  @override
+  final List<AutoRoute> routes = [
+    AutoRoute(
+      path: "/",
+      page: HomeRoute.page,
+    ),
+    AutoRoute(path: "/setting", page: SettingRoute.page),
+    AutoRoute(path: "/detials/:id", page: DetialsRoute.page),
+  ];
+}

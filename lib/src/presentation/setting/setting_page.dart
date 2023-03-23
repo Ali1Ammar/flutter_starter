@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:starter/src/presentation/setting/setting_controller.dart';
 import 'package:starter/src/shared/extention/extention.dart';
+import 'package:auto_route/auto_route.dart';
 
+@RoutePage()
 class SettingPage extends ConsumerWidget {
   final String justSomeParam;
   const SettingPage(this.justSomeParam, {super.key});

@@ -1,43 +1,30 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 part of 'route.dart';
 
-class _$AppRouter extends RootStackRouter {
+abstract class _$AppRouter extends RootStackRouter {
   _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
 
   @override
   final Map<String, PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HomePage(),
-      );
-    },
-    SettingRoute.name: (routeData) {
-      final args = routeData.argsAs<SettingRouteArgs>();
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: SettingPage(
-          args.justSomeParam,
-          key: args.key,
-        ),
       );
     },
     DetialsRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<DetialsRouteArgs>(
           orElse: () => DetialsRouteArgs(id: pathParams.getInt('id')));
-      return MaterialPageX<dynamic>(
+      return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: DetialsPage(
           key: args.key,
@@ -45,69 +32,31 @@ class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    SettingRoute.name: (routeData) {
+      final args = routeData.argsAs<SettingRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SettingPage(
+          args.justSomeParam,
+          key: args.key,
+        ),
+      );
+    },
   };
-
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          HomeRoute.name,
-          path: '/',
-        ),
-        RouteConfig(
-          SettingRoute.name,
-          path: '/setting',
-        ),
-        RouteConfig(
-          DetialsRoute.name,
-          path: '/detials/:id',
-        ),
-      ];
 }
 
 /// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute()
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
           HomeRoute.name,
-          path: '/',
+          initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
-}
 
-/// generated route for
-/// [SettingPage]
-class SettingRoute extends PageRouteInfo<SettingRouteArgs> {
-  SettingRoute({
-    required String justSomeParam,
-    Key? key,
-  }) : super(
-          SettingRoute.name,
-          path: '/setting',
-          args: SettingRouteArgs(
-            justSomeParam: justSomeParam,
-            key: key,
-          ),
-        );
-
-  static const String name = 'SettingRoute';
-}
-
-class SettingRouteArgs {
-  const SettingRouteArgs({
-    required this.justSomeParam,
-    this.key,
-  });
-
-  final String justSomeParam;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'SettingRouteArgs{justSomeParam: $justSomeParam, key: $key}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -116,17 +65,21 @@ class DetialsRoute extends PageRouteInfo<DetialsRouteArgs> {
   DetialsRoute({
     Key? key,
     required int id,
+    List<PageRouteInfo>? children,
   }) : super(
           DetialsRoute.name,
-          path: '/detials/:id',
           args: DetialsRouteArgs(
             key: key,
             id: id,
           ),
           rawPathParams: {'id': id},
+          initialChildren: children,
         );
 
   static const String name = 'DetialsRoute';
+
+  static const PageInfo<DetialsRouteArgs> page =
+      PageInfo<DetialsRouteArgs>(name);
 }
 
 class DetialsRouteArgs {
@@ -142,5 +95,43 @@ class DetialsRouteArgs {
   @override
   String toString() {
     return 'DetialsRouteArgs{key: $key, id: $id}';
+  }
+}
+
+/// generated route for
+/// [SettingPage]
+class SettingRoute extends PageRouteInfo<SettingRouteArgs> {
+  SettingRoute({
+    required String justSomeParam,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SettingRoute.name,
+          args: SettingRouteArgs(
+            justSomeParam: justSomeParam,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingRoute';
+
+  static const PageInfo<SettingRouteArgs> page =
+      PageInfo<SettingRouteArgs>(name);
+}
+
+class SettingRouteArgs {
+  const SettingRouteArgs({
+    required this.justSomeParam,
+    this.key,
+  });
+
+  final String justSomeParam;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SettingRouteArgs{justSomeParam: $justSomeParam, key: $key}';
   }
 }

@@ -7,5 +7,6 @@
   "@theme": {
     "description": "theme of the application"
   },
-  "setting": "setting"
+  "setting": "setting",
+  "detaisl": "detaisl"
 }

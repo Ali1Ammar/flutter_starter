@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:starter/src/main/route.dart';
 import 'package:starter/src/shared/extention/extention.dart';
 
+@RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 context.read(appRouterProvider).push(DetialsRoute(id: 5));
               },
-              child: Text(context.translator.setting))
+              child: Text(context.translator.detaisl))
         ],
       ),
     );

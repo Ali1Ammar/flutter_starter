@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         final setting = ref.watch(settingControllerProvider);
 
         return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           restorationScopeId: 'app',
           //route
           onGenerateTitle: (BuildContext context) =>

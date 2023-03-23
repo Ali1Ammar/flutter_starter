@@ -8,5 +8,8 @@
     "description": "theme of the application"
   },
   "setting": "setting",
-  "detaisl": "detaisl"
+  "detaisl": "detaisl",
+  "noInternet": "internet error",
+  "notFound": "not found data",
+  "unauthraizeError": "error unauthraize error"
 }

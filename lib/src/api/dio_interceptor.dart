@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:starter/src/dto/login_response.dart';
+import 'package:starter/src/dto/token_response.dart';
+import 'package:starter/src/presentation/auth/token_controller.dart';
 import 'package:starter/src/shared/exception/network_exception.dart';
 
 import 'package:starter/src/shared/helper/log.dart';
@@ -13,8 +14,8 @@ class DioInterceptors extends Interceptor {
   @override
   Future<void> onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    LoginResponse? token = LoginResponse(
-        "df", 'dsfs'); // get token maybe like this ref.read(tokenController);
+    final token = ref.read(tokenController);
+
     if (token != null) {
       options.headers["Authorization"] = "Bearer ${token.token}";
     }
@@ -64,14 +65,14 @@ class DioInterceptors extends Interceptor {
                 isRefreshTokenEndPoint) {
               logIt("TokenExpired");
               // call refreshToken like below
-              // await ref.read(tokenController.notifier).refreshToken();
+              await ref.read(tokenController.notifier).refreshToken();
               final res = await retry(err.requestOptions, dio);
               handler.resolve(res);
               return;
             } else {
               logIt("UnAuth");
-              // recover from this maybe by logOut and let user loging again
-              // ref.read(tokenController.notifier).logOut();
+              // recover from this maybe by logOut annd let user loging again
+              ref.read(tokenController.notifier).logOut();
               handler.reject(cloneError(err, UnAuthorizeException()));
               return;
             }

@@ -10,10 +10,13 @@ abstract class BaseStorage {
   Future<String?> read(String key);
 
   Future<void> delete(String key);
+
+  Future<void> clearAll() async {}
 }
 
 class SecureStorage extends BaseStorage {
-  final storage = const FlutterSecureStorage();
+  final storage =
+      const FlutterSecureStorage(mOptions: MacOsOptions(synchronizable: true));
 
   @override
   Future<void> write(String key, String value) async {
@@ -56,6 +59,12 @@ class AsyncHiveStorage extends BaseStorage {
   @override
   Future<void> delete(String key) async {
     await (await storage).delete(key);
+  }
+
+  @override
+  Future<void> clearAll() async {
+    (await storage).clear();
+    return super.clearAll();
   }
 }
 

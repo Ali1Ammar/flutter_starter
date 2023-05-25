@@ -1,19 +1,28 @@
-abstract class Style {
+import 'package:flutter/material.dart';
+
+abstract class Spacing {
   // raduis
   static const raduis = 18;
 
   /// small
-  static const s = 4;
+  static const xsmall = 4;
+
+  /// small
+  static const small = 8;
 
   /// medium
-  static const m = 8;
+  static const medium = 12;
 
-  /// x medium
-  static const xm = 16;
+  /// x-medium
+  static const xMedium = 16;
 
   /// large
-  static const l = 20;
+  static const large = 20;
 
-  /// x large
-  static const xl = 32;
+  /// x-large
+  static const xlarge = 32;
+}
+
+abstract class Coloring {
+  static const primaryColor = Colors.red;
 }

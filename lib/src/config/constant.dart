@@ -1,1 +1,3 @@
-const baseUrl = 'localhost:3000';
+abstract class ConstValue {
+  static const baseUrl = 'localhost:3000';
+}

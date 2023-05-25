@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:starter/src/config/style.dart';
 
 class Themeing {
-  static const primaryColor = Colors.red;
   static final lightTheme = ThemeData.from(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: primaryColor,
+      seedColor: Coloring.primaryColor,
     ),
   );
 
   static final darkTheme = ThemeData.from(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: primaryColor,
+      seedColor: Coloring.primaryColor,
       brightness: Brightness.dark,
     ),
   );

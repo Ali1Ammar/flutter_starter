@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:starter/src/api/client.dart';
+import 'package:starter/src/data/api/client.dart';
 import 'package:starter/src/dto/token_response.dart';
-import 'package:starter/src/service/storage_service.dart';
+import 'package:starter/src/data/storage/base_storage_service.dart';
 
 final tokenController = StateNotifierProvider<TokenController, TokenDto?>(
     (ref) => TokenController(ref));

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:starter/src/dto/token_response.dart';
 import 'package:starter/src/presentation/auth/token_controller.dart';
 import 'package:starter/src/shared/exception/network_exception.dart';
 

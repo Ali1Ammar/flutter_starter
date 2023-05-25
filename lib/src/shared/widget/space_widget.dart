@@ -12,16 +12,22 @@ class Space extends StatelessWidget {
   }
 }
 
+class XSSpace extends Space {
+  const XSSpace({
+    super.key,
+  }) : super(size: const Size(4, 4));
+}
+
 class SSpace extends Space {
   const SSpace({
     super.key,
-  }) : super(size: const Size(4, 4));
+  }) : super(size: const Size(8, 8));
 }
 
 class MSpace extends Space {
   const MSpace({
     super.key,
-  }) : super(size: const Size(8, 8));
+  }) : super(size: const Size(12, 12));
 }
 
 class XMSpace extends Space {

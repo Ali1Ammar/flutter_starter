@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:starter/src/service/storage_service.dart';
+import 'package:starter/src/data/storage/base_storage_service.dart';
 
 final asyncInitProvider =
     Provider<AsyncInit>((ref) => throw UnimplementedError());

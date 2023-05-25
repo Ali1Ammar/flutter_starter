@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:starter/src/data/storage/base_storage_service.dart';
 import 'package:starter/src/main/async_init.dart';
 import 'package:starter/src/presentation/setting/setting_state.dart';
-import 'package:starter/src/service/storage_service.dart';
 
 final settingControllerProvider =
     StateNotifierProvider<SettingController, SettingState>((ref) {

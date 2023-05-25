@@ -39,7 +39,7 @@ class SettingController extends StateNotifier<SettingState>
   }
 
   @override
-  toJson(SettingState v) {
+  Map<String, dynamic> toJson(SettingState v) {
     return v.toJson();
   }
 }

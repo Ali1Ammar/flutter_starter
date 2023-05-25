@@ -98,7 +98,7 @@ abstract class StorageNotifier<T> extends StateNotifier<T?>
   StorageNotifier(this.storage, this.key) : super(null);
 
   @override
-  setStateTo(val) {
+  void setStateTo(val) {
     state = val;
   }
 }
@@ -106,7 +106,7 @@ abstract class StorageNotifier<T> extends StateNotifier<T?>
 mixin StorageNotifierMixin<T> {
   BaseStorage get storage;
   String get key;
-  setStateTo(T? val);
+  void setStateTo(T? val);
 
   Future<void> init() async {
     final token = await storage.read(key);
